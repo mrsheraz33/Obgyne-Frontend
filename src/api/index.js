@@ -1,6 +1,10 @@
 import axios from 'axios'
 
-const api = axios.create({ baseURL: '/api', withCredentials: true })
+// BAAD MEIN
+const api = axios.create({ 
+  baseURL: 'https://obgyne-backend.onrender.com/api',
+  withCredentials: true 
+})
 
 api.interceptors.request.use(cfg => {
   const token = localStorage.getItem('token')
