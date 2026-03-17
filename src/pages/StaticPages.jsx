@@ -117,14 +117,25 @@ export const ContactPage = () => {
   const [loading, setLoading] = useState(false)
   const [sent,    setSent]    = useState(false)
 
-  const handle = async e => {
-    e.preventDefault()
-    setLoading(true)
-    await new Promise(r => setTimeout(r, 1400))
-    setLoading(false)
-    setSent(true)
-    toast.success('Message sent! We will reply within 24 hours.')
-  }
+const handle = async e => {
+  e.preventDefault()
+  setLoading(true)
+
+  // WhatsApp pe message bhejo
+  const msg = encodeURIComponent(
+    `*New Message — OBGyne Simplified*\n\n` +
+    `Name: ${form.firstName} ${form.lastName}\n` +
+    `Email: ${form.email}\n` +
+    `Course: ${form.course || 'Not specified'}\n` +
+    `Message: ${form.message}`
+  )
+
+  window.open(`https://wa.me/923172876305?text=${msg}`, '_blank')
+
+  setLoading(false)
+  setSent(true)
+  toast.success('Redirecting to WhatsApp!')
+}
 
   return (
     <div className="pt-[68px]">
