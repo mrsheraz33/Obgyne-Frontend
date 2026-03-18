@@ -19,15 +19,15 @@
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center gap-2 px-6 py-3 bg-teal-600 text-white font-semibold
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-green-600 text-white font-semibold
            text-sm rounded-xl transition-all duration-200 cursor-pointer border-0
-           hover:bg-teal-700 hover:-translate-y-0.5
-           shadow-[0_4px_14px_rgba(10,110,104,0.3)] hover:shadow-[0_8px_24px_rgba(10,110,104,0.4)];
+           hover:bg-green-700 hover:-translate-y-0.5
+           shadow-[0_4px_14px_rgba(22,163,74,0.3)] hover:shadow-[0_8px_24px_rgba(22,163,74,0.4)];
   }
   .btn-outline {
-    @apply inline-flex items-center gap-2 px-6 py-3 border-2 border-teal-600 text-teal-600
+    @apply inline-flex items-center gap-2 px-6 py-3 border-2 border-green-600 text-green-600
            font-semibold text-sm rounded-xl transition-all duration-200 cursor-pointer
-           hover:bg-teal-50 bg-transparent;
+           hover:bg-green-50 bg-transparent;
   }
   .btn-white {
     @apply inline-flex items-center gap-2 px-6 py-3 bg-white text-teal-700 font-semibold
