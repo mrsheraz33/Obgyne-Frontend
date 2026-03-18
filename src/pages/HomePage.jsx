@@ -35,8 +35,8 @@ const Counter = ({ target, suffix = '' }) => {
 const FEATURES = [
   { icon:'fa-video',          title:'HD Video Lectures',      desc:'Structured video lectures covering every exam topic clearly and systematically.' },
   { icon:'fa-clipboard-list', title:'Exam-Focused Content',   desc:'Every lecture built around real FCPS, MCPS & TOACS exam patterns — zero fluff.' },
-  { icon:'fa-user-doctor',    title:'Expert Instructor',      desc:'Dr. Mariam — OB/GYN specialist with 15+ years of clinical & teaching experience.' },
-  { icon:'fa-layer-group',    title:'Module-Based Learning',  desc:'TOACS prep organised into clear clinical modules for systematic revision.' },
+  { icon:'fa-user-doctor',    title:'Expert Instructor',      desc:'Learn from the passionate, well qualified and experts in their fields. Our instructors are not only competent in their subjects but also possess excellent communication skills which enable them to understand and work well with people.' },
+  { icon:'fa-layer-group',    title:'Module-Based Learning',  desc:'TOACS preparation organised into clinical modules. Theory Group covers complete FCPS & MCPS syllabus systematically.' },
   { icon:'fa-file-lines',     title:'Past Papers 2019–2026',  desc:'All past papers fully solved with model answers and detailed explanations.' },
   { icon:'fa-mobile-screen',  title:'Learn Anywhere',         desc:'Mobile, tablet or desktop — study at hospital, home, or on the go.' },
 ]
@@ -49,9 +49,27 @@ const STEPS = [
 ]
 
 const TESTIMONIALS = [
-  { text:'"Dr. Mariam\'s TOACS course changed everything. I cleared on my first attempt. Her clinical explanations are unmatched."', name:'Dr. Ayesha K.', role:'FCPS Resident, Islamabad',  bg:'bg-teal-100   text-teal-800',   initials:'AK' },
-  { text:'"The Theory Group is perfectly structured. Every lecture covers exactly what comes in the exam. Best investment I made."', name:'Dr. Nadia R.', role:'MCPS Candidate, Rawalpindi', bg:'bg-purple-100 text-purple-800', initials:'NR' },
-  { text:'"Past Papers course is essential. Solved papers with Dr. Mariam\'s explanations made the exam pattern so clear."',       name:'Dr. Sana M.', role:'TOACS Candidate, Lahore',    bg:'bg-amber-100  text-amber-800',  initials:'SM' },
+  { 
+    text:'"Dr. Mariam\'s TOACS course changed everything for me. I cleared on my very first attempt. Her clinical explanations are so practical and easy to understand — nothing like dry textbooks. The module-based approach made revision so much easier. Highly recommended for every TOACS candidate!"', 
+    name:'Dr. Ayesha K.', 
+    role:'FCPS Resident, Islamabad',  
+    bg:'bg-teal-100 text-teal-800',   
+    initials:'AK' 
+  },
+  { 
+    text:'"The Theory Group is perfectly structured for FCPS and MCPS preparation. Every lecture covers exactly what comes in the exam — no wasted time. Dr. Mariam explains complex topics so clearly. Best investment I made for my exam preparation. I passed my written exam on first attempt!"', 
+    name:'Dr. Nadia R.', 
+    role:'MCPS Candidate, Rawalpindi', 
+    bg:'bg-purple-100 text-purple-800', 
+    initials:'NR' 
+  },
+  { 
+    text:'"Past Papers 2019–2026 course is absolutely essential for every candidate. Dr. Mariam has solved every paper with such clarity that I could finally understand the examiner\'s exact pattern. My MCQ score improved significantly after completing this course. Worth every penny!"', 
+    name:'Dr. Sana', 
+    role:'Past Papers Candidate, Lahore',    
+    bg:'bg-amber-100 text-amber-800',  
+    initials:'DS' 
+  },
 ]
 
 const HomePage = () => {
@@ -79,7 +97,7 @@ const HomePage = () => {
               </div>
               <h1 className="font-display text-gray-900 leading-[1.1] mb-5"
                 style={{fontSize:'clamp(2.4rem,5vw,3.8rem)',fontWeight:700}}>
-                Master <em className="text-teal-600 not-italic">OB/GYN</em><br/>
+                Master <em className="text-teal-600 not-italic">OBS/GYN</em><br/>
                 Exams with<br/>
                 <em className="text-teal-600 not-italic">Confidence</em>
               </h1>
@@ -279,7 +297,7 @@ const HomePage = () => {
                 <span className="w-3 h-3 rounded-full bg-red-500"/>
                 <span className="w-3 h-3 rounded-full bg-yellow-500"/>
                 <span className="w-3 h-3 rounded-full bg-green-500"/>
-                <span className="text-xs text-gray-500 ml-2">Student Review — OBGyne Simplified</span>
+                <span className="text-xs text-gray-500 ml-2">Student Review — OBSGyne Simplified</span>
               </div>
               <div className="aspect-video">
                 <iframe
@@ -352,7 +370,7 @@ const HomePage = () => {
         <div className="absolute inset-0 opacity-[0.05]" style={{backgroundImage:'radial-gradient(circle,white 1px,transparent 1px)',backgroundSize:'28px 28px'}}/>
         <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center relative z-10">
           <h2 className="font-display font-bold text-white leading-tight mb-5" style={{fontSize:'clamp(1.9rem,4vw,2.8rem)'}}>
-            Ready to ace your OB/GYN exam?
+            Ready to ace your OBS/GYN exam?
           </h2>
           <p className="text-white/75 text-base leading-relaxed mb-9">
             Join 500+ doctors who have already started. Enroll in Dr. Mariam's courses today.
@@ -365,6 +383,19 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+
+
+  {/* ═══ FLOATING WHATSAPP ═══ */}
+      
+       <a href="https://wa.me/923172876305"
+        target="_blank"
+        rel="noreferrer"
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+        title="Chat on WhatsApp"
+      >
+        <i className="fa-brands fa-whatsapp text-white text-3xl"/>
+      </a>
+      
     </div>
   )
 }
