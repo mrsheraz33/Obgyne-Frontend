@@ -20,12 +20,12 @@ const Footer = () => (
               <i className="fa-solid fa-stethoscope text-white text-sm"/>
             </div>
             <div>
-              <div className="font-display font-semibold text-[1.05rem] text-white leading-none">OBGyne</div>
+              <div className="font-display font-semibold text-[1.05rem] text-white leading-none">OBSGyne</div>
               <div className="text-[9px] font-bold text-teal-400 uppercase tracking-widest">Simplified</div>
             </div>
           </div>
           <p className="text-sm leading-relaxed mb-5 text-gray-500 max-w-xs">
-            Pakistan's trusted OB/GYN exam prep for FCPS, MCPS & TOACS by Dr. Mariam.
+            Pakistan's trusted OBS/GYN exam prep for FCPS, MCPS & TOACS by Dr. Mariam.
           </p>
           <div className="flex gap-2">
             {SOCIALS.map((s,i) => (
@@ -94,7 +94,7 @@ const Footer = () => (
 
       {/* Bottom */}
       <div className="py-5 flex flex-wrap items-center justify-between gap-3 text-xs text-gray-600">
-        <span>© {new Date().getFullYear()} OBGyne Simplified. All rights reserved.</span>
+        <span>© {new Date().getFullYear()} OBSGyne Simplified. All rights reserved.</span>
         <span>Made with for Pakistan's medical community</span>
       </div>
     </div>
