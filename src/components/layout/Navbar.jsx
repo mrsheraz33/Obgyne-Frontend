@@ -31,7 +31,7 @@ const Navbar = () => {
 
   const lc = ({ isActive }) =>
     `px-3 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${
-      isActive ? 'text-teal-700 bg-teal-50' : 'text-gray-600 hover:text-teal-700 hover:bg-teal-50'
+      isActive ? 'text-green-700 bg-green-50' : 'text-gray-600 hover:text-green-700 hover:bg-green-50'
     }`
 
   return (
@@ -42,12 +42,12 @@ const Navbar = () => {
 
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5 flex-shrink-0 mr-2">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-teal-700 to-teal-500 flex items-center justify-center shadow-md">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-green-700 to-green-500 flex items-center justify-center shadow-md">
               <i className="fa-solid fa-stethoscope text-white text-sm"/>
             </div>
             <div className="leading-tight">
-              <div className="font-display font-semibold text-[1.05rem] text-gray-900 leading-none">OBGyne</div>
-              <div className="text-[9px] font-bold text-teal-600 uppercase tracking-widest">Simplified</div>
+              <div className="font-display font-semibold text-[1.05rem] text-gray-900 leading-none">OBSGyne</div>
+              <div className="text-[9px] font-bold text-green-600 uppercase tracking-widest">Simplified</div>
             </div>
           </Link>
 
@@ -64,8 +64,8 @@ const Navbar = () => {
             {user ? (
               <div className="relative" id="profileDrop">
                 <button onClick={(e) => { e.stopPropagation(); setDropOpen(o=>!o) }}
-                  className="flex items-center gap-2 px-3 py-1.5 rounded-xl hover:bg-teal-50 transition-colors cursor-pointer border-0 bg-transparent">
-                  <div className="w-8 h-8 rounded-lg bg-teal-100 flex items-center justify-center font-bold text-xs text-teal-700 flex-shrink-0">
+                  className="flex items-center gap-2 px-3 py-1.5 rounded-xl hover:bg-green-50 transition-colors cursor-pointer border-0 bg-transparent">
+                  <div className="w-8 h-8 rounded-lg bg-green-100 flex items-center justify-center font-bold text-xs text-green-700 flex-shrink-0">
                     {user.name?.slice(0,2).toUpperCase()}
                   </div>
                   <span className="text-sm font-semibold text-gray-800">{user.name?.split(' ')[0]}</span>
@@ -78,12 +78,12 @@ const Navbar = () => {
                       <div className="text-xs text-gray-500 truncate">{user.email}</div>
                     </div>
                     <Link to="/dashboard" onClick={()=>setDropOpen(false)}
-                      className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-gray-600 hover:bg-teal-50 hover:text-teal-700 transition-colors">
+                      className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-gray-600 hover:bg-green-50 hover:text-green-700 transition-colors">
                       <i className="fa-solid fa-gauge-high text-xs w-4 text-center"/>My Courses
                     </Link>
                     {isAdmin && (
                       <Link to="/admin" onClick={()=>setDropOpen(false)}
-                        className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-gray-600 hover:bg-teal-50 hover:text-teal-700 transition-colors">
+                        className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-gray-600 hover:bg-green-50 hover:text-green-700 transition-colors">
                         <i className="fa-solid fa-shield-halved text-xs w-4 text-center"/>Admin Panel
                       </Link>
                     )}
@@ -98,7 +98,7 @@ const Navbar = () => {
               </div>
             ) : (
               <>
-                <Link to="/login"    className="px-4 py-2 text-sm font-semibold text-gray-600 hover:text-teal-700 rounded-lg hover:bg-teal-50 transition-all">Sign In</Link>
+                <Link to="/login"    className="px-4 py-2 text-sm font-semibold text-gray-600 hover:text-green-700 rounded-lg hover:bg-green-50 transition-all">Sign In</Link>
                 <Link to="/register" className="btn-primary text-sm px-4 py-2.5">
                   <i className="fa-solid fa-graduation-cap text-xs"/>Enroll Now
                 </Link>
