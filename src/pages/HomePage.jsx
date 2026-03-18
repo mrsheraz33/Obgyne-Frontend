@@ -33,21 +33,12 @@ const Counter = ({ target, suffix = '' }) => {
 }
 
 const FEATURES = [
-<<<<<<< HEAD
-  { icon:'fa-video',          title:'HD Video Lectures',      desc:'Structured video lectures covering every exam topic clearly and systematically.' },
-  { icon:'fa-clipboard-list', title:'Exam-Focused Content',   desc:'Every lecture built around real FCPS, MCPS & TOACS exam patterns — zero fluff.' },
-  { icon:'fa-user-doctor',    title:'Expert Instructor',      desc:'Learn from the passionate, well qualified and experts in their fields. Our instructors are not only competent in their subjects but also possess excellent communication skills which enable them to understand and work well with people.' },
-  { icon:'fa-layer-group',    title:'Module-Based Learning',  desc:'TOACS preparation organised into clinical modules. Theory Group covers complete FCPS & MCPS syllabus systematically.' },
-  { icon:'fa-file-lines',     title:'Past Papers 2019–2026',  desc:'All past papers fully solved with model answers and detailed explanations.' },
-  { icon:'fa-mobile-screen',  title:'Learn Anywhere',         desc:'Mobile, tablet or desktop — study at hospital, home, or on the go.' },
-=======
   { icon: 'fa-video', title: 'HD Video Lectures', desc: 'Structured video lectures covering every exam topic clearly and systematically.' },
   { icon: 'fa-clipboard-list', title: 'Exam-Focused Content', desc: 'Every lecture built around real FCPS, MCPS & TOACS exam patterns — zero fluff.' },
   { icon: 'fa-user-doctor', title: 'Expert Instructor', desc: 'Learn from the passionate, well qualified and experts in their fields. Our instructors are not only competent in their subjects but also possess excellent communication skills which enable them to understand and work well with people.' },
   { icon: 'fa-layer-group', title: 'Module-Based Learning', desc: 'TOACS preparation organised into clinical modules. Theory Group covers complete FCPS & MCPS syllabus systematically.' },
   { icon: 'fa-file-lines', title: 'Past Papers 2019–2026', desc: 'All past papers fully solved with model answers and detailed explanations.' },
   { icon: 'fa-mobile-screen', title: 'Learn Anywhere', desc: 'Mobile, tablet or desktop — study at hospital, home, or on the go.' },
->>>>>>> ffefcc6 (Add new files)
 ]
 
 const STEPS = [
@@ -58,28 +49,6 @@ const STEPS = [
 ]
 
 const TESTIMONIALS = [
-<<<<<<< HEAD
-  { 
-    text:'"Dr. Mariam\'s TOACS course changed everything for me. I cleared on my very first attempt. Her clinical explanations are so practical and easy to understand — nothing like dry textbooks. The module-based approach made revision so much easier. Highly recommended for every TOACS candidate!"', 
-    name:'Dr. Ayesha K.', 
-    role:'FCPS Resident, Islamabad',  
-    bg:'bg-teal-100 text-teal-800',   
-    initials:'AK' 
-  },
-  { 
-    text:'"The Theory Group is perfectly structured for FCPS and MCPS preparation. Every lecture covers exactly what comes in the exam — no wasted time. Dr. Mariam explains complex topics so clearly. Best investment I made for my exam preparation. I passed my written exam on first attempt!"', 
-    name:'Dr. Nadia R.', 
-    role:'MCPS Candidate, Rawalpindi', 
-    bg:'bg-purple-100 text-purple-800', 
-    initials:'NR' 
-  },
-  { 
-    text:'"Past Papers 2019–2026 course is absolutely essential for every candidate. Dr. Mariam has solved every paper with such clarity that I could finally understand the examiner\'s exact pattern. My MCQ score improved significantly after completing this course. Worth every penny!"', 
-    name:'Dr. Sana', 
-    role:'Past Papers Candidate, Lahore',    
-    bg:'bg-amber-100 text-amber-800',  
-    initials:'DS' 
-=======
   {
     text: '"Dr. Mariam\'s TOACS course changed everything for me. I cleared on my very first attempt. Her clinical explanations are so practical and easy to understand — nothing like dry textbooks. The module-based approach made revision so much easier. Highly recommended for every TOACS candidate!"',
     name: 'Dr. Ayesha K.',
@@ -100,7 +69,6 @@ const TESTIMONIALS = [
     role: 'Past Papers Candidate, Lahore',
     bg: 'bg-amber-100 text-amber-800',
     initials: 'DS'
->>>>>>> ffefcc6 (Add new files)
   },
 ]
 
@@ -128,15 +96,9 @@ const HomePage = () => {
                 Now Enrolling — Theory · TOACS · Past Papers
               </div>
               <h1 className="font-display text-gray-900 leading-[1.1] mb-5"
-<<<<<<< HEAD
-                style={{fontSize:'clamp(2.4rem,5vw,3.8rem)',fontWeight:700}}>
-                Master <em className="text-teal-600 not-italic">OBS/GYN</em><br/>
-                Exams with<br/>
-=======
                 style={{ fontSize: 'clamp(2.4rem,5vw,3.8rem)', fontWeight: 700 }}>
                 Master <em className="text-teal-600 not-italic">OBS/GYN</em><br />
                 Exams with<br />
->>>>>>> ffefcc6 (Add new files)
                 <em className="text-teal-600 not-italic">Confidence</em>
               </h1>
 
@@ -338,15 +300,9 @@ const HomePage = () => {
           <div className="fade-up mb-10 max-w-2xl mx-auto">
             <div className="card overflow-hidden">
               <div className="bg-gray-900 flex items-center gap-2 px-4 py-3 border-b border-gray-800">
-<<<<<<< HEAD
-                <span className="w-3 h-3 rounded-full bg-red-500"/>
-                <span className="w-3 h-3 rounded-full bg-yellow-500"/>
-                <span className="w-3 h-3 rounded-full bg-green-500"/>
-=======
                 <span className="w-3 h-3 rounded-full bg-red-500" />
                 <span className="w-3 h-3 rounded-full bg-yellow-500" />
                 <span className="w-3 h-3 rounded-full bg-green-500" />
->>>>>>> ffefcc6 (Add new files)
                 <span className="text-xs text-gray-500 ml-2">Student Review — OBSGyne Simplified</span>
               </div>
               <div className="aspect-video">
@@ -419,11 +375,7 @@ const HomePage = () => {
       <section className="py-24 relative overflow-hidden" style={{ background: 'linear-gradient(145deg,#074d48,#0a6e68)' }}>
         <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: 'radial-gradient(circle,white 1px,transparent 1px)', backgroundSize: '28px 28px' }} />
         <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center relative z-10">
-<<<<<<< HEAD
-          <h2 className="font-display font-bold text-white leading-tight mb-5" style={{fontSize:'clamp(1.9rem,4vw,2.8rem)'}}>
-=======
           <h2 className="font-display font-bold text-white leading-tight mb-5" style={{ fontSize: 'clamp(1.9rem,4vw,2.8rem)' }}>
->>>>>>> ffefcc6 (Add new files)
             Ready to ace your OBS/GYN exam?
           </h2>
           <p className="text-white/75 text-base leading-relaxed mb-9">
@@ -439,29 +391,17 @@ const HomePage = () => {
       </section>
 
 
-<<<<<<< HEAD
-  {/* ═══ FLOATING WHATSAPP ═══ */}
-      
-       <a href="https://wa.me/923172876305"
-=======
       {/* ═══ FLOATING WHATSAPP ═══ */}
 
       <a href="https://wa.me/923172876305"
->>>>>>> ffefcc6 (Add new files)
         target="_blank"
         rel="noreferrer"
         className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
         title="Chat on WhatsApp"
       >
-<<<<<<< HEAD
-        <i className="fa-brands fa-whatsapp text-white text-3xl"/>
-      </a>
-      
-=======
         <i className="fa-brands fa-whatsapp text-white text-3xl" />
       </a>
 
->>>>>>> ffefcc6 (Add new files)
     </div>
   )
 }
