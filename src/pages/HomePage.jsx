@@ -114,8 +114,8 @@ const HomePage = () => {
                 <Link to="/courses" className="btn-primary"><i className="fa-solid fa-graduation-cap text-sm" />View All Courses</Link>
                 <Link to="/about" className="btn-outline"><i className="fa-solid fa-user-doctor text-sm" />About Dr. Mariam</Link>
               </div>
-              <div className="flex flex-wrap gap-8 pt-8 border-t border-gray-200">
-                {[{ t: 500, s: '+', l: 'Students Enrolled' }, { t: 98, s: '%', l: 'Pass Rate' }, { t: 15, s: '+', l: 'Years Experience' }].map((s, i) => (
+              <div className="flex justify-center flex-wrap gap-8 pt-8 border-t border-gray-200">
+                {[{ t: 500, s: '+', l: 'Students Enrolled' }, { t: 98, s: '%', l: 'Pass Rate' }].map((s, i) => (
                   <div key={i}>
                     <div className="font-display text-3xl font-bold text-teal-600 leading-tight">
                       <Counter target={s.t} suffix={s.s} />
@@ -156,7 +156,7 @@ const HomePage = () => {
                 <div className="mt-4 flex items-center justify-between bg-teal-50 rounded-xl p-3.5 border border-teal-100">
                   <div>
                     <div className="text-xs font-bold text-teal-700 mb-0.5">By Dr. Mariam</div>
-                    <div className="text-[11px] text-teal-600">FCPS (Obs & Gynae) · 15+ Years</div>
+                    <div className="text-[11px] text-teal-600">FCPS (Obs & Gynae)</div>
                   </div>
                   <div className="flex gap-0.5">{[1, 2, 3, 4, 5].map(s => <i key={s} className="fa-solid fa-star text-amber-400 text-xs" />)}</div>
                 </div>
@@ -326,8 +326,8 @@ const HomePage = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-2xl mx-auto">
               {[
-                { file: '/voice1.mp3', name: 'Dr. Fatima', role: 'FCPS Candidate, Lahore', initials: 'DF', bg: 'bg-teal-100 text-teal-800' },
-                { file: '/voice2.mp3', name: 'Dr. Sara', role: 'TOACS Candidate, Karachi', initials: 'DS', bg: 'bg-purple-100 text-purple-800' },
+                { file: '/voice1.opus', name: 'Dr. Fatima', role: 'FCPS Candidate, Lahore', initials: 'DF', bg: 'bg-teal-100 text-teal-800' },
+                { file: '/voice2.opus', name: 'Dr. Sara', role: 'TOACS Candidate, Karachi', initials: 'DS', bg: 'bg-purple-100 text-purple-800' },
               ].map((v, i) => (
                 <div key={i} className="card p-5">
                   <div className="flex items-center gap-3 mb-4">

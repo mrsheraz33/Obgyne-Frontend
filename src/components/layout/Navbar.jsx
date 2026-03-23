@@ -36,7 +36,7 @@ const Navbar = () => {
   return (
     <>
       <nav className={`fixed top-0 inset-x-0 z-50 h-[68px] transition-all duration-300
-        ${scrolled ? 'bg-white/96 backdrop-blur-xl shadow-sm border-b border-gray-100' : 'bg-white/85 backdrop-blur-md'}`}>
+        ${scrolled ? 'bg-white backdrop-blur-xl shadow-sm border-b border-gray-100' : 'bg-white backdrop-blur-md'}`}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-full flex items-center gap-3">
 
           {/* Logo */}
@@ -44,7 +44,7 @@ const Navbar = () => {
             <img
               src="/logo2.png "
               alt="OBGyne Simplified"
-              className="h-[70px] w-auto object-contain rounded-lg"
+              className="h-[65px] w-auto object-contain rounded-lg"
             />
           </Link>
 
