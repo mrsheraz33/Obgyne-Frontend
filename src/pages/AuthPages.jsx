@@ -13,7 +13,7 @@ const AuthCard = ({ children, title, subtitle }) => (
             <i className="fa-solid fa-stethoscope text-white text-sm"/>
           </div>
           <div className="text-left">
-            <div className="font-display font-semibold text-lg text-gray-900 leading-none">OBGyne</div>
+            <div className="font-display font-semibold text-lg text-gray-900 leading-none">OBSGyne</div>
             <div className="text-[10px] font-bold text-teal-600 uppercase tracking-widest">Simplified</div>
           </div>
         </Link>

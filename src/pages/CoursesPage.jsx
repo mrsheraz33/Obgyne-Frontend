@@ -68,10 +68,12 @@ import toast from 'react-hot-toast'
 //     </div>
 //   )
 // }
-
 /* Module Accordion for TOACS */
 const ModuleAccordion = ({ modules }) => {
   const [open, setOpen] = useState(0)
+  const { user } = useAuth()
+  const navigate = useNavigate()
+  
   return (
     <div className="space-y-2">
       {modules.map((mod, i) => (
@@ -95,17 +97,27 @@ const ModuleAccordion = ({ modules }) => {
                   <span className="text-sm text-gray-700 flex-1">{l.title}</span>
                   <span className="text-xs text-gray-400 flex-shrink-0">{l.duration}</span>
                   
-                  {/* WATCH BUTTON - ADD THIS */}
+                  {/* VIDEO BUTTON - Only for logged in users */}
                   {l.videoUrl && (
-                    <a
-                      href={l.videoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-shrink-0 bg-red-600 hover:bg-red-700 text-white text-xs px-3 py-1.5 rounded-full flex items-center gap-1.5 transition-colors"
-                    >
-                      <i className="fa-brands fa-youtube text-sm" />
-                      Watch
-                    </a>
+                    user ? (
+                      <a
+                        href={l.videoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-shrink-0 bg-red-600 hover:bg-red-700 text-white text-xs px-3 py-1.5 rounded-full flex items-center gap-1.5 transition-colors"
+                      >
+                        <i className="fa-brands fa-youtube text-sm" />
+                        Watch
+                      </a>
+                    ) : (
+                      <button
+                        onClick={() => navigate('/login')}
+                        className="flex-shrink-0 bg-gray-500 hover:bg-teal-600 text-white text-xs px-3 py-1.5 rounded-full flex items-center gap-1.5 transition-colors cursor-pointer"
+                      >
+                        <i className="fa-solid fa-lock text-sm" />
+                        Login to Watch
+                      </button>
+                    )
                   )}
                   
                   {l.isFree && <span className="text-[10px] font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-full border border-green-200 flex-shrink-0">FREE</span>}
@@ -122,7 +134,10 @@ const ModuleAccordion = ({ modules }) => {
 /* Flat lesson list */
 const LessonList = ({ lessons }) => {
   const [showAll, setShowAll] = useState(false)
+  const { user } = useAuth()
+  const navigate = useNavigate()
   const visible = showAll ? lessons : lessons.slice(0, 6)
+  
   return (
     <div>
       <div className="divide-y divide-gray-100 border border-gray-200 rounded-xl overflow-hidden">
@@ -134,17 +149,27 @@ const LessonList = ({ lessons }) => {
             <span className="text-sm text-gray-700 flex-1">{l.title}</span>
             <span className="text-xs text-gray-400 flex-shrink-0">{l.duration}</span>
             
-            {/* WATCH BUTTON - ADD THIS */}
+            {/* VIDEO BUTTON - Only for logged in users */}
             {l.videoUrl && (
-              <a
-                href={l.videoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-shrink-0 bg-red-600 hover:bg-red-700 text-white text-xs px-3 py-1.5 rounded-full flex items-center gap-1.5 transition-colors"
-              >
-                <i className="fa-brands fa-youtube text-sm" />
-                Watch
-              </a>
+              user ? (
+                <a
+                  href={l.videoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-shrink-0 bg-red-600 hover:bg-red-700 text-white text-xs px-3 py-1.5 rounded-full flex items-center gap-1.5 transition-colors"
+                >
+                  <i className="fa-brands fa-youtube text-sm" />
+                  Watch
+                </a>
+              ) : (
+                <button
+                  onClick={() => navigate('/login')}
+                  className="flex-shrink-0 bg-gray-500 hover:bg-teal-600 text-white text-xs px-3 py-1.5 rounded-full flex items-center gap-1.5 transition-colors cursor-pointer"
+                >
+                  <i className="fa-solid fa-lock text-sm" />
+                  Login to Watch
+                </button>
+              )
             )}
             
             {l.isFree && <span className="text-[10px] font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-full border border-green-200 flex-shrink-0">FREE</span>}
@@ -160,8 +185,6 @@ const LessonList = ({ lessons }) => {
     </div>
   )
 }
-
-
 
 /* Full course detail card */
 const CourseDetail = ({ course, enrolled, progress, onEnroll, enrolling }) => {
@@ -442,6 +465,7 @@ const CoursesPage = () => {
             progress={getProgress(activeCourse._id)}
             onEnroll={() => handleEnroll(activeCourse._id)}
             enrolling={enrollingId === activeCourse._id}
+            user={user}
           />
         )}
       </div>

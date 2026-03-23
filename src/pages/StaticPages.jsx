@@ -6,7 +6,7 @@ import toast         from 'react-hot-toast'
    ABOUT PAGE
 ════════════════════════ */
 const TIMELINE = [
-  { year:'MBBS',  title:'Bachelor of Medicine & Surgery',      desc:'Graduated from a leading Pakistani medical college with distinction in OB/GYN.' },
+  { year:'MBBS',  title:'Bachelor of Medicine & Surgery',      desc:'Graduated from a leading Pakistani medical college with distinction in OBS/Gyne.' },
   { year:'MCPS',  title:'MCPS — CPSP Pakistan',                desc:'Cleared MCPS (Obstetrics & Gynaecology) from the College of Physicians & Surgeons Pakistan.' },
   { year:'FCPS',  title:'FCPS — CPSP Pakistan',                desc:'Obtained FCPS (Obstetrics & Gynaecology) after intensive postgraduate training.' },
   { year:'2024',  title:'Founded OBGyne Simplified',           desc:'Launched a dedicated platform to make high-quality OB/GYN exam preparation accessible for every doctor in Pakistan.' },
@@ -34,7 +34,7 @@ export const AboutPage = () => (
               <span className="font-display font-bold text-teal-600/15 select-none" style={{fontSize:'clamp(6rem,15vw,9rem)'}}>DM</span>
               <div className="absolute bottom-5 left-1/2 -translate-x-1/2 bg-white rounded-2xl px-5 py-3 text-center shadow-lg border border-gray-100 whitespace-nowrap">
                 <div className="font-display font-semibold text-gray-900">Dr. Mariam</div>
-                <div className="text-xs text-gray-500 mt-0.5">FCPS (Obs & Gynae) · Medical Educator</div>
+                <div className="text-xs text-gray-500 mt-0.5">FCPS (Obs & Gyne) · Medical Educator</div>
               </div>
             </div>
             <div className="mt-5 grid grid-cols-3 gap-3">
@@ -58,7 +58,7 @@ export const AboutPage = () => (
           <div>
             <div className="section-label mb-4"><span className="w-6 h-0.5 bg-teal-600 rounded"/>Biography</div>
             <h2 className="font-display font-bold text-gray-900 mb-5 leading-tight" style={{fontSize:'clamp(1.7rem,3vw,2.3rem)'}}>
-              Dedicated to making OB/GYN education accessible
+              Dedicated to making OBS/Gyne education accessible
             </h2>
             <div className="space-y-4 text-sm text-gray-600 leading-relaxed mb-8">
               <p>Dr. Mariam is a highly qualified Obstetrician and Gynaecologist with FCPS and MCPS from CPSP Pakistan. With over 15 years of clinical and academic experience, she has helped hundreds of postgraduate doctors clear their board examinations.</p>

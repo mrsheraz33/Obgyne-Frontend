@@ -97,7 +97,7 @@ const HomePage = () => {
               </div>
               <h1 className="font-display text-gray-900 leading-[1.1] mb-5"
                 style={{ fontSize: 'clamp(2.4rem,5vw,3.8rem)', fontWeight: 700 }}>
-                Master <em className="text-teal-600 not-italic">OBS/GYN</em><br />
+                Master <em className="text-teal-600 not-italic">OBS/Gyne</em><br />
                 Exams with<br />
                 <em className="text-teal-600 not-italic">Confidence</em>
               </h1>
@@ -108,7 +108,7 @@ const HomePage = () => {
               </p>
 
               <p className="text-[1.05rem] text-gray-500 leading-relaxed mb-8 max-w-lg">
-                Expert FCPS, MCPS & TOACS preparation by <strong className="text-gray-700">Dr. Mariam</strong> — Pakistan's most trusted OB/GYN educator with 15+ years of experience.
+                Expert FCPS, MCPS, Theory & TOACS preparation by <strong className="text-gray-700">Dr. Mariam</strong> Pakistan's most trusted OBS/Gyne educator.
               </p>
               <div className="flex flex-wrap gap-3 mb-10">
                 <Link to="/courses" className="btn-primary"><i className="fa-solid fa-graduation-cap text-sm" />View All Courses</Link>
@@ -131,19 +131,19 @@ const HomePage = () => {
             </div>
 
             {/* Right card */}
-           {/* Right — Doctor Image */}
-<div className="flex justify-center items-center" style={{animation:'slideUp 0.9s ease'}}>
-  <div className="relative">
-    <div className="w-[410px] h-[550px] rounded-xl overflow-hidden shadow-2xl border-4 border-white">
-      <img 
-        src="/doctor.jpeg"
-        alt="Doctor"
-        className="w-full h-full object-cover"
-      />
-    </div>
+            {/* Right — Doctor Image */}
+            <div className="flex justify-center items-center" style={{ animation: 'slideUp 0.9s ease' }}>
+              <div className="relative">
+                <div className="w-[410px] h-[550px] rounded-xl overflow-hidden shadow-2xl border-4 border-white">
+                  <img
+                    src="/doctor.jpeg"
+                    alt="Doctor"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
 
-    {/* Badge 1 */}
-    {/* <div className="absolute -top-4 -right-4 bg-white rounded-2xl px-4 py-3 shadow-lg border border-gray-100 flex items-center gap-2">
+                {/* Badge 1 */}
+                {/* <div className="absolute -top-4 -right-4 bg-white rounded-2xl px-4 py-3 shadow-lg border border-gray-100 flex items-center gap-2">
       <div className="w-8 h-8 rounded-lg bg-green-50 flex items-center justify-center">
         <i className="fa-solid fa-trophy text-green-600 text-sm"/>
       </div>
@@ -153,8 +153,8 @@ const HomePage = () => {
       </div>
     </div> */}
 
-    {/* Badge 2 */}
-    {/* <div className="absolute -bottom-4 -left-4 bg-white rounded-2xl px-4 py-3 shadow-lg border border-gray-100 flex items-center gap-2">
+                {/* Badge 2 */}
+                {/* <div className="absolute -bottom-4 -left-4 bg-white rounded-2xl px-4 py-3 shadow-lg border border-gray-100 flex items-center gap-2">
       <div className="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center">
         <i className="fa-solid fa-star text-amber-500 text-sm"/>
       </div>
@@ -164,13 +164,13 @@ const HomePage = () => {
       </div>
     </div> */}
 
-    {/* Badge 3 */}
-    {/* <div className="absolute -bottom-4 right-6 bg-green-600 rounded-2xl px-4 py-3 shadow-lg flex items-center gap-2">
+                {/* Badge 3 */}
+                {/* <div className="absolute -bottom-4 right-6 bg-green-600 rounded-2xl px-4 py-3 shadow-lg flex items-center gap-2">
       <i className="fa-solid fa-circle-check text-white text-sm"/>
       <div className="text-xs font-bold text-white">FCPS Qualified</div>
     </div> */}
-  </div>
-</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -385,7 +385,7 @@ const HomePage = () => {
         <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: 'radial-gradient(circle,white 1px,transparent 1px)', backgroundSize: '28px 28px' }} />
         <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center relative z-10">
           <h2 className="font-display font-bold text-white leading-tight mb-5" style={{ fontSize: 'clamp(1.9rem,4vw,2.8rem)' }}>
-            Ready to ace your OBS/GYN exam?
+            Ready to ace your OBS/Gyne exam?
           </h2>
           <p className="text-white/75 text-base leading-relaxed mb-9">
             Join 500+ doctors who have already started. Enroll in Dr. Mariam's courses today.
