@@ -19,7 +19,7 @@ export const AboutPage = () => (
       <div className="max-w-xl mx-auto px-4">
         <div className="section-label justify-center mb-3"><span className="w-6 h-0.5 bg-teal-600 rounded"/>About</div>
         <h1 className="font-display font-bold text-gray-900 mb-4" style={{fontSize:'clamp(2rem,4vw,2.8rem)'}}>Meet Dr. Mariam</h1>
-        <p className="text-gray-500 leading-relaxed">Pakistan's trusted OB/GYN educator — 15+ years helping doctors clear FCPS, MCPS & TOACS.</p>
+        <p className="text-gray-500 leading-relaxed">Pakistan's trusted OBS/Gyne educator — 15+ years helping doctors clear FCPS, MCPS & TOACS.</p>
       </div>
     </div>
 
@@ -108,7 +108,7 @@ export const AboutPage = () => (
 const SOCIALS = [
   {icon:'fa-brands fa-whatsapp',   href:'https://wa.me/03172876305',                                          label:'WhatsApp',  val:'+92 317 2876305'  },
   {icon:'fa-brands fa-youtube',    href:'https://youtube.com/@obsgynesimplified?si=jyWT_X8A0WBEerty',         label:'YouTube',   val:'@obsgynesimplified'},
-  {icon:'fa-brands fa-facebook-f', href:'https://www.facebook.com/share/16osYBK14h/',                         label:'Facebook',  val:'OBGyne Simplified' },
+  {icon:'fa-brands fa-facebook-f', href:'https://www.facebook.com/share/16osYBK14h/',                         label:'Facebook',  val:'OBSGyne Simplified' },
   {icon:'fa-brands fa-instagram',  href:'https://www.instagram.com/obsgynesimplified?igsh=N28wazRpc2ZsbG9m', label:'Instagram', val:'@obsgynesimplified'},
 ]
 

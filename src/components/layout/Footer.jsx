@@ -25,7 +25,7 @@ const Footer = () => (
             </div>
           </div>
           <p className="text-sm leading-relaxed mb-5 text-gray-500 max-w-xs">
-            Pakistan's trusted OBS/GYN exam prep for FCPS, MCPS & TOACS by Dr. Mariam.
+            Pakistan's trusted OBS/Gyne exam prep for FCPS, MCPS & TOACS by Dr. Mariam.
           </p>
           <div className="flex gap-2">
             {SOCIALS.map((s,i) => (

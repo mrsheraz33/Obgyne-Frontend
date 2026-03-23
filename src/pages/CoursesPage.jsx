@@ -6,6 +6,70 @@ import { Spinner } from '../components/ui'
 import toast from 'react-hot-toast'
 
 /* Module Accordion for TOACS */
+// const ModuleAccordion = ({ modules }) => {
+//   const [open, setOpen] = useState(0)
+//   return (
+//     <div className="space-y-2">
+//       {modules.map((mod, i) => (
+//         <div key={i} className="border border-gray-200 rounded-xl overflow-hidden">
+//           <button onClick={() => setOpen(open === i ? -1 : i)}
+//             className="w-full flex items-center justify-between px-4 py-3.5 bg-gray-50 hover:bg-teal-50 transition-colors text-left cursor-pointer border-0">
+//             <div className="flex items-center gap-3">
+//               <span className="w-6 h-6 rounded-lg bg-teal-100 text-teal-700 text-xs font-bold flex items-center justify-center flex-shrink-0">{i + 1}</span>
+//               <span className="text-sm font-semibold text-gray-800">{mod.title}</span>
+//               <span className="text-xs text-gray-400">({mod.lessons?.length || 0} lessons)</span>
+//             </div>
+//             <i className={`fa-solid fa-chevron-down text-gray-400 text-xs transition-transform ${open === i ? 'rotate-180' : ''}`} />
+//           </button>
+//           {open === i && (
+//             <div className="divide-y divide-gray-100">
+//               {mod.lessons?.map((l, j) => (
+//                 <div key={j} className="flex items-center gap-3 px-4 py-3 bg-white hover:bg-gray-50 transition-colors">
+//                   <div className={`w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 ${l.isFree ? 'bg-green-50' : 'bg-gray-100'}`}>
+//                     <i className={`fa-solid ${l.isFree ? 'fa-play text-green-600' : 'fa-lock text-gray-400'} text-[10px]`} />
+//                   </div>
+//                   <span className="text-sm text-gray-700 flex-1">{l.title}</span>
+//                   <span className="text-xs text-gray-400 flex-shrink-0">{l.duration}</span>
+//                   {l.isFree && <span className="text-[10px] font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-full border border-green-200 flex-shrink-0">FREE</span>}
+//                 </div>
+//               ))}
+//             </div>
+//           )}
+//         </div>
+//       ))}
+//     </div>
+//   )
+// }
+
+// /* Flat lesson list */
+// const LessonList = ({ lessons }) => {
+//   const [showAll, setShowAll] = useState(false)
+//   const visible = showAll ? lessons : lessons.slice(0, 6)
+//   return (
+//     <div>
+//       <div className="divide-y divide-gray-100 border border-gray-200 rounded-xl overflow-hidden">
+//         {visible.map((l, i) => (
+//           <div key={i} className="flex items-center gap-3 px-4 py-3 bg-white hover:bg-gray-50 transition-colors">
+//             <div className={`w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 ${l.isFree ? 'bg-green-50' : 'bg-gray-100'}`}>
+//               <i className={`fa-solid ${l.isFree ? 'fa-play text-green-600' : 'fa-lock text-gray-400'} text-[10px]`} />
+//             </div>
+//             <span className="text-sm text-gray-700 flex-1">{l.title}</span>
+//             <span className="text-xs text-gray-400 flex-shrink-0">{l.duration}</span>
+//             {l.isFree && <span className="text-[10px] font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-full border border-green-200 flex-shrink-0">FREE</span>}
+//           </div>
+//         ))}
+//       </div>
+//       {lessons.length > 6 && (
+//         <button onClick={() => setShowAll(s => !s)}
+//           className="mt-3 text-sm text-teal-600 font-semibold hover:underline cursor-pointer border-0 bg-transparent">
+//           {showAll ? '↑ Show less' : `↓ Show all ${lessons.length} lessons`}
+//         </button>
+//       )}
+//     </div>
+//   )
+// }
+
+/* Module Accordion for TOACS */
 const ModuleAccordion = ({ modules }) => {
   const [open, setOpen] = useState(0)
   return (
@@ -30,6 +94,20 @@ const ModuleAccordion = ({ modules }) => {
                   </div>
                   <span className="text-sm text-gray-700 flex-1">{l.title}</span>
                   <span className="text-xs text-gray-400 flex-shrink-0">{l.duration}</span>
+                  
+                  {/* WATCH BUTTON - ADD THIS */}
+                  {l.videoUrl && (
+                    <a
+                      href={l.videoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-shrink-0 bg-red-600 hover:bg-red-700 text-white text-xs px-3 py-1.5 rounded-full flex items-center gap-1.5 transition-colors"
+                    >
+                      <i className="fa-brands fa-youtube text-sm" />
+                      Watch
+                    </a>
+                  )}
+                  
                   {l.isFree && <span className="text-[10px] font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-full border border-green-200 flex-shrink-0">FREE</span>}
                 </div>
               ))}
@@ -55,6 +133,20 @@ const LessonList = ({ lessons }) => {
             </div>
             <span className="text-sm text-gray-700 flex-1">{l.title}</span>
             <span className="text-xs text-gray-400 flex-shrink-0">{l.duration}</span>
+            
+            {/* WATCH BUTTON - ADD THIS */}
+            {l.videoUrl && (
+              <a
+                href={l.videoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-shrink-0 bg-red-600 hover:bg-red-700 text-white text-xs px-3 py-1.5 rounded-full flex items-center gap-1.5 transition-colors"
+              >
+                <i className="fa-brands fa-youtube text-sm" />
+                Watch
+              </a>
+            )}
+            
             {l.isFree && <span className="text-[10px] font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-full border border-green-200 flex-shrink-0">FREE</span>}
           </div>
         ))}
@@ -68,6 +160,8 @@ const LessonList = ({ lessons }) => {
     </div>
   )
 }
+
+
 
 /* Full course detail card */
 const CourseDetail = ({ course, enrolled, progress, onEnroll, enrolling }) => {
@@ -100,7 +194,7 @@ const CourseDetail = ({ course, enrolled, progress, onEnroll, enrolling }) => {
             <span><i className="fa-solid fa-signal mr-1.5" />{course.level}</span>
             {/* Yeh add karo */}
             <span className="font-bold text-white bg-white/20 px-2.5 py-1 rounded-full border border-white/20">
-              <i className="fa-solid fa-tag mr-1.5" />PKR 1,000
+              <i className="fa-solid fa-tag mr-1.5" />PAID
             </span>
 
           </div>
@@ -126,7 +220,7 @@ const CourseDetail = ({ course, enrolled, progress, onEnroll, enrolling }) => {
             {course.whatYouLearn?.length > 0 && (
               <div className="mb-6">
                 <h4 className="font-semibold text-gray-800 mb-3 flex items-center gap-2">
-                  <i className="fa-solid fa-circle-check text-teal-600 text-sm" />What you'll learn
+                  <i className="fa-solid fa-circle-check text-teal-600 text-sm" />What This Course Offers
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {course.whatYouLearn.map((w, i) => (
@@ -174,9 +268,9 @@ const CourseDetail = ({ course, enrolled, progress, onEnroll, enrolling }) => {
             <div className="w-16 h-16 rounded-2xl bg-teal-50 flex items-center justify-center font-display font-bold text-xl text-teal-700 flex-shrink-0 border border-teal-100">DM</div>
             <div>
               <h4 className="font-bold text-gray-900 mb-1 text-lg">Dr. Mariam</h4>
-              <p className="text-sm text-teal-600 font-semibold mb-3">FCPS (Obs & Gynae) · Senior Consultant</p>
+              <p className="text-sm text-teal-600 font-semibold mb-3">FCPS (Obs & Gyne) · Senior Consultant</p>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Dr. Mariam is a highly qualified OB/GYN specialist with FCPS & MCPS from CPSP Pakistan, and 15+ years of clinical and academic experience. She has helped 500+ doctors clear FCPS, MCPS and TOACS examinations across Pakistan.
+                Dr. Mariam is a highly qualified OBS/Gyne specialist with FCPS & MCPS from CPSP Pakistan, and 15+ years of clinical and academic experience. She has helped 500+ doctors clear FCPS, MCPS and TOACS examinations across Pakistan.
               </p>
               <div className="flex flex-wrap gap-3 mt-4">
                 {[
@@ -211,12 +305,10 @@ const CourseDetail = ({ course, enrolled, progress, onEnroll, enrolling }) => {
               {/* Fee display */}
               <div className="flex items-center justify-between bg-green-50 border border-green-200 rounded-xl px-4 py-3">
                 <div>
-                  <div className="text-xs font-bold text-gray-500 uppercase tracking-wide">Course Fee</div>
-                  <div className="text-2xl font-bold text-green-700">PKR 1,000</div>
+                  <div className="text-xs font-bold text-gray-500 uppercase tracking-wide">PAID</div>
                 </div>
                 <div className="text-right">
-                  <div className="text-xs text-gray-400">One-time payment</div>
-                  <div className="text-xs text-gray-400">Lifetime access</div>
+                  <div className="text-xs text-gray-400">Till Exam</div>
                 </div>
               </div>
 
@@ -226,7 +318,7 @@ const CourseDetail = ({ course, enrolled, progress, onEnroll, enrolling }) => {
                 className="w-full py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition-all hover:-translate-y-0.5 text-white"
                 style={{ background: '#1a9e4a', boxShadow: '0 4px 14px rgba(26,158,74,0.3)' }}>
                 <i className="fa-solid fa-mobile-screen text-base" />
-                Pay PKR 1,000 via EasyPaisa
+                Pay Fee Course via  EasyPaisa or Jazz Cash
               </a>
 
               {/* Steps */}
@@ -235,7 +327,7 @@ const CourseDetail = ({ course, enrolled, progress, onEnroll, enrolling }) => {
                   <i className="fa-solid fa-circle-info text-green-600 mr-1.5" />How to Enroll
                 </div>
                 {[
-                  'Send PKR 1,000 to EasyPaisa: 03172876305',
+                  'Pay Fee Course via  EasyPaisa or Jazz Cash : 03172876305',
                   'Take a screenshot of your payment',
                   'Send screenshot on WhatsApp to get access',
                   'Dr. Mariam will activate your course within 24 hours',
@@ -321,7 +413,7 @@ const CoursesPage = () => {
         <div className="max-w-xl mx-auto px-4">
           <div className="section-label justify-center mb-3"><span className="w-6 h-0.5 bg-teal-600 rounded" />All Courses</div>
           <h1 className="font-display font-bold text-gray-900 mb-4" style={{ fontSize: 'clamp(2rem,4vw,2.8rem)' }}>
-            3 Expert OB/GYN Courses
+            3 Expert OBS/Gyne Courses
           </h1>
           <p className="text-gray-500 leading-relaxed">FCPS · MCPS · TOACS preparation by Dr. Mariam</p>
         </div>

@@ -114,7 +114,7 @@ const HomePage = () => {
                 <Link to="/courses" className="btn-primary"><i className="fa-solid fa-graduation-cap text-sm" />View All Courses</Link>
                 <Link to="/about" className="btn-outline"><i className="fa-solid fa-user-doctor text-sm" />About Dr. Mariam</Link>
               </div>
-              <div className="flex justify-center flex-wrap gap-8 pt-8 border-t border-gray-200">
+              {/* <div className="flex justify-center flex-wrap gap-8 pt-8 border-t border-gray-200">
                 {[{ t: 500, s: '+', l: 'Students Enrolled' }, { t: 98, s: '%', l: 'Pass Rate' }].map((s, i) => (
                   <div key={i}>
                     <div className="font-display text-3xl font-bold text-teal-600 leading-tight">
@@ -127,41 +127,50 @@ const HomePage = () => {
                   <div className="font-display text-3xl font-bold text-teal-600 leading-tight">4.9★</div>
                   <div className="text-xs text-gray-500 font-medium mt-0.5">Student Rating</div>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             {/* Right card */}
-            <div className="hidden lg:block" style={{ animation: 'slideUp 0.9s ease' }}>
-              <div className="bg-white rounded-3xl p-6 shadow-2xl border border-gray-100">
-                <div className="flex items-center gap-2 mb-5">
-                  <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                  <span className="text-xs font-bold text-teal-700 uppercase tracking-wide">3 Courses Available</span>
-                </div>
-                {[
-                  { icon: 'fa-book-medical', title: 'Theory Group', sub: 'FCPS · MCPS · Written Exam', color: 'bg-teal-50 text-teal-700', to: '/courses/theory-group' },
-                  { icon: 'fa-stethoscope', title: 'TOACS Preparatory Group', sub: 'All Modules — OSCE Stations', color: 'bg-purple-50 text-purple-700', to: '/courses/toacs-group' },
-                  { icon: 'fa-file-lines', title: 'Past Papers 2019–2026', sub: 'Fully Solved with Answers', color: 'bg-emerald-50 text-emerald-700', to: '/courses/past-papers' },
-                ].map((c, i) => (
-                  <Link to={c.to} key={i} className="flex items-center gap-3 p-3.5 rounded-xl bg-gray-50 hover:bg-teal-50 border border-gray-100 hover:border-teal-200 transition-all mb-2 last:mb-0 group">
-                    <div className={`w-10 h-10 rounded-xl ${c.color} flex items-center justify-center flex-shrink-0`}>
-                      <i className={`fa-solid ${c.icon} text-sm`} />
-                    </div>
-                    <div>
-                      <div className="text-sm font-semibold text-gray-800">{c.title}</div>
-                      <div className="text-xs text-gray-500">{c.sub}</div>
-                    </div>
-                    <i className="fa-solid fa-arrow-right text-[10px] text-gray-400 ml-auto group-hover:text-teal-600 transition-colors" />
-                  </Link>
-                ))}
-                <div className="mt-4 flex items-center justify-between bg-teal-50 rounded-xl p-3.5 border border-teal-100">
-                  <div>
-                    <div className="text-xs font-bold text-teal-700 mb-0.5">By Dr. Mariam</div>
-                    <div className="text-[11px] text-teal-600">FCPS (Obs & Gynae)</div>
-                  </div>
-                  <div className="flex gap-0.5">{[1, 2, 3, 4, 5].map(s => <i key={s} className="fa-solid fa-star text-amber-400 text-xs" />)}</div>
-                </div>
-              </div>
-            </div>
+           {/* Right — Doctor Image */}
+<div className="flex justify-center items-center" style={{animation:'slideUp 0.9s ease'}}>
+  <div className="relative">
+    <div className="w-[410px] h-[550px] rounded-xl overflow-hidden shadow-2xl border-4 border-white">
+      <img 
+        src="/doctor.jpeg"
+        alt="Doctor"
+        className="w-full h-full object-cover"
+      />
+    </div>
+
+    {/* Badge 1 */}
+    {/* <div className="absolute -top-4 -right-4 bg-white rounded-2xl px-4 py-3 shadow-lg border border-gray-100 flex items-center gap-2">
+      <div className="w-8 h-8 rounded-lg bg-green-50 flex items-center justify-center">
+        <i className="fa-solid fa-trophy text-green-600 text-sm"/>
+      </div>
+      <div>
+        <div className="text-xs font-bold text-gray-800">500+ Students</div>
+        <div className="text-[10px] text-gray-400">Enrolled</div>
+      </div>
+    </div> */}
+
+    {/* Badge 2 */}
+    {/* <div className="absolute -bottom-4 -left-4 bg-white rounded-2xl px-4 py-3 shadow-lg border border-gray-100 flex items-center gap-2">
+      <div className="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center">
+        <i className="fa-solid fa-star text-amber-500 text-sm"/>
+      </div>
+      <div>
+        <div className="text-xs font-bold text-gray-800">4.9 Rating</div>
+        <div className="text-[10px] text-gray-400">By Students</div>
+      </div>
+    </div> */}
+
+    {/* Badge 3 */}
+    {/* <div className="absolute -bottom-4 right-6 bg-green-600 rounded-2xl px-4 py-3 shadow-lg flex items-center gap-2">
+      <i className="fa-solid fa-circle-check text-white text-sm"/>
+      <div className="text-xs font-bold text-white">FCPS Qualified</div>
+    </div> */}
+  </div>
+</div>
           </div>
         </div>
       </section>
@@ -326,8 +335,8 @@ const HomePage = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-2xl mx-auto">
               {[
-                { file: '/voice1.opus', name: 'Dr. Fatima', role: 'FCPS Candidate, Lahore', initials: 'DF', bg: 'bg-teal-100 text-teal-800' },
-                { file: '/voice2.opus', name: 'Dr. Sara', role: 'TOACS Candidate, Karachi', initials: 'DS', bg: 'bg-purple-100 text-purple-800' },
+                { file: '/voice1.opus', name: 'Dr. Rahela', role: 'FCPS Candidate, Lahore', initials: 'DF', bg: 'bg-teal-100 text-teal-800' },
+                { file: '/voice2.opus', name: 'Dr. Mehwish', role: 'TOACS Candidate, Karachi', initials: 'DS', bg: 'bg-purple-100 text-purple-800' },
               ].map((v, i) => (
                 <div key={i} className="card p-5">
                   <div className="flex items-center gap-3 mb-4">
