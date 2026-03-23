@@ -365,7 +365,7 @@ const CourseDetail = ({ course, enrolled, progress, onEnroll, enrolling }) => {
               </div>
 
               {/* WhatsApp button */}
-              <a href="https://wa.me/923172876305?text=I%20have%20paid%20PKR%201000%20for%20the%20course.%20Please%20activate%20my%20account."
+              <a href="https://wa.me/923172876305?text=I%20have%20paid%20for%20the%20course.%20Please%20activate%20my%20account."
                 target="_blank" rel="noreferrer"
                 className="w-full py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 bg-white border-2 border-green-600 text-green-700 hover:bg-green-50 transition-all">
                 <i className="fa-brands fa-whatsapp text-green-600 text-base" />
