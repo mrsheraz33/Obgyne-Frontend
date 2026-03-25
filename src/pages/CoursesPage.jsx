@@ -6,69 +6,6 @@ import { Spinner } from '../components/ui'
 import toast from 'react-hot-toast'
 
 /* Module Accordion for TOACS */
-// const ModuleAccordion = ({ modules }) => {
-//   const [open, setOpen] = useState(0)
-//   return (
-//     <div className="space-y-2">
-//       {modules.map((mod, i) => (
-//         <div key={i} className="border border-gray-200 rounded-xl overflow-hidden">
-//           <button onClick={() => setOpen(open === i ? -1 : i)}
-//             className="w-full flex items-center justify-between px-4 py-3.5 bg-gray-50 hover:bg-teal-50 transition-colors text-left cursor-pointer border-0">
-//             <div className="flex items-center gap-3">
-//               <span className="w-6 h-6 rounded-lg bg-teal-100 text-teal-700 text-xs font-bold flex items-center justify-center flex-shrink-0">{i + 1}</span>
-//               <span className="text-sm font-semibold text-gray-800">{mod.title}</span>
-//               <span className="text-xs text-gray-400">({mod.lessons?.length || 0} lessons)</span>
-//             </div>
-//             <i className={`fa-solid fa-chevron-down text-gray-400 text-xs transition-transform ${open === i ? 'rotate-180' : ''}`} />
-//           </button>
-//           {open === i && (
-//             <div className="divide-y divide-gray-100">
-//               {mod.lessons?.map((l, j) => (
-//                 <div key={j} className="flex items-center gap-3 px-4 py-3 bg-white hover:bg-gray-50 transition-colors">
-//                   <div className={`w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 ${l.isFree ? 'bg-green-50' : 'bg-gray-100'}`}>
-//                     <i className={`fa-solid ${l.isFree ? 'fa-play text-green-600' : 'fa-lock text-gray-400'} text-[10px]`} />
-//                   </div>
-//                   <span className="text-sm text-gray-700 flex-1">{l.title}</span>
-//                   <span className="text-xs text-gray-400 flex-shrink-0">{l.duration}</span>
-//                   {l.isFree && <span className="text-[10px] font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-full border border-green-200 flex-shrink-0">FREE</span>}
-//                 </div>
-//               ))}
-//             </div>
-//           )}
-//         </div>
-//       ))}
-//     </div>
-//   )
-// }
-
-// /* Flat lesson list */
-// const LessonList = ({ lessons }) => {
-//   const [showAll, setShowAll] = useState(false)
-//   const visible = showAll ? lessons : lessons.slice(0, 6)
-//   return (
-//     <div>
-//       <div className="divide-y divide-gray-100 border border-gray-200 rounded-xl overflow-hidden">
-//         {visible.map((l, i) => (
-//           <div key={i} className="flex items-center gap-3 px-4 py-3 bg-white hover:bg-gray-50 transition-colors">
-//             <div className={`w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 ${l.isFree ? 'bg-green-50' : 'bg-gray-100'}`}>
-//               <i className={`fa-solid ${l.isFree ? 'fa-play text-green-600' : 'fa-lock text-gray-400'} text-[10px]`} />
-//             </div>
-//             <span className="text-sm text-gray-700 flex-1">{l.title}</span>
-//             <span className="text-xs text-gray-400 flex-shrink-0">{l.duration}</span>
-//             {l.isFree && <span className="text-[10px] font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-full border border-green-200 flex-shrink-0">FREE</span>}
-//           </div>
-//         ))}
-//       </div>
-//       {lessons.length > 6 && (
-//         <button onClick={() => setShowAll(s => !s)}
-//           className="mt-3 text-sm text-teal-600 font-semibold hover:underline cursor-pointer border-0 bg-transparent">
-//           {showAll ? '↑ Show less' : `↓ Show all ${lessons.length} lessons`}
-//         </button>
-//       )}
-//     </div>
-//   )
-// }
-/* Module Accordion for TOACS */
 const ModuleAccordion = ({ modules }) => {
   const [open, setOpen] = useState(0)
   const { user } = useAuth()
@@ -97,18 +34,28 @@ const ModuleAccordion = ({ modules }) => {
                   <span className="text-sm text-gray-700 flex-1">{l.title}</span>
                   <span className="text-xs text-gray-400 flex-shrink-0">{l.duration}</span>
                   
-                  {/* VIDEO BUTTON - Only for logged in users */}
+                  {/* VIDEO BUTTON - Only for approved logged in users */}
                   {l.videoUrl && (
                     user ? (
-                      <a
-                        href={l.videoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-shrink-0 bg-red-600 hover:bg-red-700 text-white text-xs px-3 py-1.5 rounded-full flex items-center gap-1.5 transition-colors"
-                      >
-                        <i className="fa-brands fa-youtube text-sm" />
-                        Watch
-                      </a>
+                      user.isApproved ? (
+                        <a
+                          href={l.videoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-shrink-0 bg-red-600 hover:bg-red-700 text-white text-xs px-3 py-1.5 rounded-full flex items-center gap-1.5 transition-colors"
+                        >
+                          <i className="fa-brands fa-youtube text-sm" />
+                          Watch
+                        </a>
+                      ) : (
+                        <button
+                          disabled
+                          className="flex-shrink-0 bg-gray-400 cursor-not-allowed text-white text-xs px-3 py-1.5 rounded-full flex items-center gap-1.5"
+                        >
+                          <i className="fa-solid fa-clock text-sm" />
+                          Pending Approval
+                        </button>
+                      )
                     ) : (
                       <button
                         onClick={() => navigate('/login')}
@@ -149,18 +96,28 @@ const LessonList = ({ lessons }) => {
             <span className="text-sm text-gray-700 flex-1">{l.title}</span>
             <span className="text-xs text-gray-400 flex-shrink-0">{l.duration}</span>
             
-            {/* VIDEO BUTTON - Only for logged in users */}
+            {/* VIDEO BUTTON - Only for approved logged in users */}
             {l.videoUrl && (
               user ? (
-                <a
-                  href={l.videoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-shrink-0 bg-red-600 hover:bg-red-700 text-white text-xs px-3 py-1.5 rounded-full flex items-center gap-1.5 transition-colors"
-                >
-                  <i className="fa-brands fa-youtube text-sm" />
-                  Watch
-                </a>
+                user.isApproved ? (
+                  <a
+                    href={l.videoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-shrink-0 bg-red-600 hover:bg-red-700 text-white text-xs px-3 py-1.5 rounded-full flex items-center gap-1.5 transition-colors"
+                  >
+                    <i className="fa-brands fa-youtube text-sm" />
+                    Watch
+                  </a>
+                ) : (
+                  <button
+                    disabled
+                    className="flex-shrink-0 bg-gray-400 cursor-not-allowed text-white text-xs px-3 py-1.5 rounded-full flex items-center gap-1.5"
+                  >
+                    <i className="fa-solid fa-clock text-sm" />
+                    Pending Approval
+                  </button>
+                )
               ) : (
                 <button
                   onClick={() => navigate('/login')}
@@ -187,14 +144,11 @@ const LessonList = ({ lessons }) => {
 }
 
 /* Full course detail card */
-const CourseDetail = ({ course, enrolled, progress, onEnroll, enrolling }) => {
+const CourseDetail = ({ course, enrolled, progress, onEnroll, enrolling, user }) => {
   const [tab, setTab] = useState('overview')
   const grad = course.colorTheme === 'purple' ? 'from-purple-700 to-purple-500'
     : course.colorTheme === 'green' ? 'from-emerald-700 to-emerald-500'
       : 'from-teal-700 to-teal-500'
-  const btnCls = course.colorTheme === 'purple' ? 'bg-purple-600 hover:bg-purple-700'
-    : course.colorTheme === 'green' ? 'bg-emerald-600 hover:bg-emerald-700'
-      : 'bg-teal-600 hover:bg-teal-700'
 
   const totalLessons = course.hasModules
     ? (course.modules || []).reduce((s, m) => s + (m.lessons?.length || 0), 0)
@@ -215,11 +169,9 @@ const CourseDetail = ({ course, enrolled, progress, onEnroll, enrolling }) => {
             <span><i className="fa-solid fa-book mr-1.5" />{totalLessons} lessons</span>
             <span><i className="fa-solid fa-language mr-1.5" />{course.language}</span>
             <span><i className="fa-solid fa-signal mr-1.5" />{course.level}</span>
-            {/* Yeh add karo */}
             <span className="font-bold text-white bg-white/20 px-2.5 py-1 rounded-full border border-white/20">
               <i className="fa-solid fa-tag mr-1.5" />PAID
             </span>
-
           </div>
         </div>
       </div>
@@ -293,7 +245,8 @@ const CourseDetail = ({ course, enrolled, progress, onEnroll, enrolling }) => {
               <h4 className="font-bold text-gray-900 mb-1 text-lg">Dr. Mariam</h4>
               <p className="text-sm text-teal-600 font-semibold mb-3">FCPS (Obs & Gyne) · Senior Consultant</p>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Dr. Mariam is a highly qualified OBS/Gyne specialist with FCPS & MCPS from CPSP Pakistan, and 15+ years of clinical and academic experience. She has helped 500+ doctors clear FCPS, MCPS and TOACS examinations across Pakistan.
+             Dr. Mariam is a highly qualified OBS/Gyne specialist with FCPS from CPSP Pakistan. She has helped 500+ doctors clear FCPS and TOACS examinations across Pakistan.
+
               </p>
               <div className="flex flex-wrap gap-3 mt-4">
                 {[
@@ -324,7 +277,6 @@ const CourseDetail = ({ course, enrolled, progress, onEnroll, enrolling }) => {
             </div>
           ) : (
             <div className="space-y-3">
-
               {/* Fee display */}
               <div className="flex items-center justify-between bg-green-50 border border-green-200 rounded-xl px-4 py-3">
                 <div>
@@ -341,7 +293,7 @@ const CourseDetail = ({ course, enrolled, progress, onEnroll, enrolling }) => {
                 className="w-full py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition-all hover:-translate-y-0.5 text-white"
                 style={{ background: '#1a9e4a', boxShadow: '0 4px 14px rgba(26,158,74,0.3)' }}>
                 <i className="fa-solid fa-mobile-screen text-base" />
-                Pay Fee Course via  EasyPaisa or Jazz Cash
+                Pay Fee Course via EasyPaisa or Jazz Cash
               </a>
 
               {/* Steps */}
@@ -350,7 +302,7 @@ const CourseDetail = ({ course, enrolled, progress, onEnroll, enrolling }) => {
                   <i className="fa-solid fa-circle-info text-green-600 mr-1.5" />How to Enroll
                 </div>
                 {[
-                  'Pay Fee Course via  EasyPaisa or Jazz Cash : 03172876305',
+                  'Pay Fee Course via EasyPaisa or Jazz Cash : 03172876305',
                   'Take a screenshot of your payment',
                   'Send screenshot on WhatsApp to get access',
                   'Dr. Mariam will activate your course within 24 hours',
@@ -371,7 +323,6 @@ const CourseDetail = ({ course, enrolled, progress, onEnroll, enrolling }) => {
                 <i className="fa-brands fa-whatsapp text-green-600 text-base" />
                 Send Payment Screenshot on WhatsApp
               </a>
-
             </div>
           )}
         </div>

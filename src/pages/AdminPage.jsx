@@ -437,6 +437,19 @@ const AdminPage = () => {
     }
   }
 
+  // ✅ NEW: Approve User Function
+  const approveUser = async (userId) => {
+    try {
+      const { data } = await api.put(`/admin/users/${userId}/approve`)
+      setUsers(users.map(u => 
+        u._id === userId ? { ...u, isApproved: true } : u
+      ))
+      toast.success(data.message || 'User approved! They can now access videos.')
+    } catch {
+      toast.error('Failed to approve user')
+    }
+  }
+
   const toggleRole = async u => {
     const nr = u.role === 'admin' ? 'student' : 'admin'
     try {
@@ -633,14 +646,14 @@ const AdminPage = () => {
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="bg-gray-50 border-b border-gray-100">
-                      {['User', 'Email', 'Role', 'City', 'Joined', 'Actions'].map(h => (
+                      {['User', 'Email', 'Role', 'Approved', 'City', 'Joined', 'Actions'].map(h => (
                         <th key={h} className="text-left py-3 px-4 text-xs font-bold text-gray-500 uppercase tracking-wide">{h}</th>
                       ))}
                     </tr>
                   </thead>
                   <tbody>
                     {filteredUsers.length === 0 ? (
-                      <tr><td colSpan={6} className="text-center text-gray-500 py-10 text-sm">No users found</td></tr>
+                      <tr><td colSpan={7} className="text-center text-gray-500 py-10 text-sm">No users found</td></tr>
                     ) : filteredUsers.map(u => (
                       <tr key={u._id} className="border-b border-gray-50 hover:bg-gray-50 transition-colors">
                         <td className="py-3 px-4">
@@ -657,12 +670,32 @@ const AdminPage = () => {
                             {u.role}
                           </span>
                         </td>
+                        <td className="py-3 px-4">
+                          {u.role === 'admin' ? (
+                            <span className="text-xs text-gray-400">—</span>
+                          ) : u.isApproved ? (
+                            <span className="px-2 py-0.5 rounded-full text-xs font-semibold bg-green-50 text-green-600">
+                              <i className="fa-solid fa-check mr-1" />Approved
+                            </span>
+                          ) : (
+                            <span className="px-2 py-0.5 rounded-full text-xs font-semibold bg-yellow-50 text-yellow-600">
+                              <i className="fa-solid fa-clock mr-1" />Pending
+                            </span>
+                          )}
+                        </td>
                         <td className="py-3 px-4 text-gray-400 text-xs">{u.city || '—'}</td>
                         <td className="py-3 px-4 text-xs text-gray-400">
                           {new Date(u.createdAt).toLocaleDateString('en-PK', { day: '2-digit', month: 'short', year: 'numeric' })}
                         </td>
                         <td className="py-3 px-4">
                           <div className="flex gap-2">
+                            {/* ✅ APPROVE BUTTON - Only show if not approved and not admin */}
+                            {!u.isApproved && u.role !== 'admin' && (
+                              <button onClick={() => approveUser(u._id)}
+                                className="text-xs px-2.5 py-1 rounded-lg bg-green-50 text-green-600 hover:bg-green-100 transition-colors cursor-pointer border-0">
+                                <i className="fa-solid fa-check mr-1" />Approve
+                              </button>
+                            )}
                             <button onClick={() => toggleRole(u)}
                               className="text-xs px-2.5 py-1 rounded-lg bg-gray-100 text-gray-600 hover:bg-teal-50 hover:text-teal-700 transition-colors cursor-pointer border-0 whitespace-nowrap">
                               Toggle Role

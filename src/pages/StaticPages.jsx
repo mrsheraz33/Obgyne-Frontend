@@ -7,7 +7,7 @@ import toast         from 'react-hot-toast'
 ════════════════════════ */
 const TIMELINE = [
   { year:'MBBS',  title:'Bachelor of Medicine & Surgery',      desc:'Graduated from a leading Pakistani medical college with distinction in OBS/Gyne.' },
-  { year:'MCPS',  title:'MCPS — CPSP Pakistan',                desc:'Cleared MCPS (Obstetrics & Gynaecology) from the College of Physicians & Surgeons Pakistan.' },
+  // { year:'MCPS',  title:'MCPS — CPSP Pakistan',                desc:'Cleared MCPS (Obstetrics & Gynaecology) from the College of Physicians & Surgeons Pakistan.' },
   { year:'FCPS',  title:'FCPS — CPSP Pakistan',                desc:'Obtained FCPS (Obstetrics & Gynaecology) after intensive postgraduate training.' },
   { year:'2024',  title:'Founded OBGyne Simplified',           desc:'Launched a dedicated platform to make high-quality OB/GYN exam preparation accessible for every doctor in Pakistan.' },
 ]
@@ -19,7 +19,7 @@ export const AboutPage = () => (
       <div className="max-w-xl mx-auto px-4">
         <div className="section-label justify-center mb-3"><span className="w-6 h-0.5 bg-teal-600 rounded"/>About</div>
         <h1 className="font-display font-bold text-gray-900 mb-4" style={{fontSize:'clamp(2rem,4vw,2.8rem)'}}>Meet Dr. Mariam</h1>
-        <p className="text-gray-500 leading-relaxed">Pakistan's trusted OBS/Gyne educator — 15+ years helping doctors clear FCPS, MCPS & TOACS.</p>
+        <p className="text-gray-500 leading-relaxed">Pakistan's trusted OBS/Gyne educator — helping doctors clear FCPS & TOACS</p>
       </div>
     </div>
 
@@ -40,7 +40,7 @@ export const AboutPage = () => (
             <div className="mt-5 grid grid-cols-3 gap-3">
               {[
                 {icon:'fa-trophy',  val:'FCPS',   label:'Qualified'  },
-                {icon:'fa-calendar',val:'15+',    label:'Years Exp.' },
+                // {icon:'fa-calendar',val:'15+',    label:'Years Exp.' },
                 {icon:'fa-users',   val:'500+',   label:'Students'   },
               ].map((f,i) => (
                 <div key={i} className="card p-3.5 text-center">
@@ -61,15 +61,15 @@ export const AboutPage = () => (
               Dedicated to making OBS/Gyne education accessible
             </h2>
             <div className="space-y-4 text-sm text-gray-600 leading-relaxed mb-8">
-              <p>Dr. Mariam is a highly qualified Obstetrician and Gynaecologist with FCPS and MCPS from CPSP Pakistan. With over 15 years of clinical and academic experience, she has helped hundreds of postgraduate doctors clear their board examinations.</p>
-              <p>Her teaching philosophy is simple — make complex topics clear, relatable, and exam-ready. She founded OBGyne Simplified to democratise high-quality OB/GYN exam preparation for every doctor in Pakistan.</p>
+              <p>Dr. Mariam is a highly qualified Obstetrician and Gynaecologist with FCPS from CPSP Pakistan. She has helped hundreds of postgraduate doctors clear their board examinations.</p>
+              <p>Her teaching philosophy is simple — make complex topics clear, relatable, and exam-ready. She founded OBGyne Simplified to democratise high-quality OBS/Gyne exam preparation for every doctor in Pakistan.</p>
             </div>
 
             <ul className="space-y-2.5 mb-8">
               {[
                 'FCPS (Obstetrics & Gynaecology) — CPSP Pakistan',
-                'MCPS (Obstetrics & Gynaecology) — CPSP Pakistan',
-                '15+ Years Clinical & Academic Practice',
+                // 'MCPS (Obstetrics & Gynaecology) — CPSP Pakistan',
+                // '15+ Years Clinical & Academic Practice',
                 '500+ Students Mentored Successfully',
                 'Theory Group · TOACS Group · Past Papers',
               ].map((q,i) => (
