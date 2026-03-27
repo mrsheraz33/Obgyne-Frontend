@@ -507,7 +507,7 @@ const AdminPage = () => {
             </div>
             <div>
               <h1 className="font-display text-xl font-bold text-gray-900">Admin Panel</h1>
-              <p className="text-xs text-gray-500">OBGyne Simplified</p>
+              <p className="text-xs text-gray-500">OBSGyne Simplified</p>
             </div>
           </div>
           <div className="flex items-center gap-3">
