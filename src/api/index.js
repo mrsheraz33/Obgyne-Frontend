@@ -2,7 +2,7 @@ import axios from 'axios'
 
 // BAAD MEIN
 const api = axios.create({ 
-  baseURL: ' http://localhost:5000/api',
+  baseURL: 'https://obgyne-backend.onrender.com/api',
   withCredentials: true 
 })
 //  https://obgyne-backend.onrender.com/api
