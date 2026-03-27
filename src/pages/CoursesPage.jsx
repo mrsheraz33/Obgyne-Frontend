@@ -341,21 +341,57 @@ const CoursesPage = () => {
   const [enrollingId, setEnrollingId] = useState(null)
   const [activeSlug, setActiveSlug] = useState(slug || null)
 
+  // useEffect(() => {
+  //   const load = async () => {
+  //     try {
+  //       const { data } = await api.get('/courses')
+  //       setCourses(data.courses)
+  //       if (!activeSlug && data.courses.length > 0) setActiveSlug(data.courses[0].slug)
+  //       if (user) {
+  //         const { data: ed } = await api.get('/enrollments/my')
+  //         setEnrollments(ed.enrollments)
+  //       }
+  //     } catch { toast.error('Failed to load courses') }
+  //     finally { setLoading(false) }
+  //   }
+  //   load()
+  // }, [user])
+
   useEffect(() => {
-    const load = async () => {
-      try {
-        const { data } = await api.get('/courses')
-        setCourses(data.courses)
-        if (!activeSlug && data.courses.length > 0) setActiveSlug(data.courses[0].slug)
-        if (user) {
-          const { data: ed } = await api.get('/enrollments/my')
-          setEnrollments(ed.enrollments)
-        }
-      } catch { toast.error('Failed to load courses') }
-      finally { setLoading(false) }
+  const loadCourses = async () => {
+    try {
+      const { data } = await api.get('/courses')
+      setCourses(data.courses)
+
+      if (!activeSlug && data.courses.length > 0)
+        setActiveSlug(data.courses[0].slug)
+
+    } catch {
+      toast.error('Failed to load courses')
+    } finally {
+      setLoading(false)
     }
-    load()
-  }, [user])
+  }
+
+  loadCourses()
+}, [])
+
+useEffect(() => {
+  if (!user) return
+
+  const timer = setTimeout(async () => {
+    try {
+      const { data } = await api.get('/enrollments/my')
+      setEnrollments(data.enrollments)
+    } catch (err) {
+      if (err.response?.status !== 403) {
+        console.log(err)
+      }
+    }
+  }, 200) // 👈 small delay
+
+  return () => clearTimeout(timer)
+}, [user])
 
   const handleEnroll = async (courseId) => {
     if (!user) { navigate('/register'); return }

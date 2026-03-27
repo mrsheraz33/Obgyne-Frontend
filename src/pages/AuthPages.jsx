@@ -100,7 +100,7 @@ export const RegisterPage = () => {
     setLoading(true)
     try {
       await register(form.name, form.email, form.password)
-      navigate('/courses')
+      navigate('/')
     } catch (err) {
       toast.error(err.response?.data?.message || 'Registration failed')
     } finally { setLoading(false) }
