@@ -9,7 +9,7 @@ const TIMELINE = [
   { year:'MBBS',  title:'Bachelor of Medicine & Surgery',      desc:'Graduated from a leading Pakistani medical college with distinction in OBS/Gyne.' },
   // { year:'MCPS',  title:'MCPS — CPSP Pakistan',                desc:'Cleared MCPS (Obstetrics & Gynaecology) from the College of Physicians & Surgeons Pakistan.' },
   { year:'FCPS',  title:'FCPS — CPSP Pakistan',                desc:'Obtained FCPS (Obstetrics & Gynaecology) after intensive postgraduate training.' },
-  { year:'2024',  title:'Founded OBGyne Simplified',           desc:'Launched a dedicated platform to make high-quality OB/GYN exam preparation accessible for every doctor in Pakistan.' },
+  { year:'2024',  title:'Founded OBSGyne Simplified',           desc:'Launched a dedicated platform to make high-quality OBS/Gyne exam preparation accessible for every doctor in Pakistan.' },
 ]
 
 export const AboutPage = () => (
