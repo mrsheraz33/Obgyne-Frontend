@@ -8,7 +8,7 @@ const AuthCard = ({ children, title, subtitle }) => (
   <div className="min-h-screen flex items-center justify-center px-4 pt-[68px] pb-12 bg-gray-50">
     <div className="w-full max-w-md">
       <div className="text-center mb-8">
-        <Link to="/" className="inline-flex items-center gap-2.5 mb-6 group">
+        {/* <Link to="/" className="inline-flex items-center gap-2.5 mb-6 group">
           <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-teal-700 to-teal-500 flex items-center justify-center shadow-lg group-hover:shadow-teal-200 transition-all">
             <i className="fa-solid fa-stethoscope text-white text-sm"/>
           </div>
@@ -16,7 +16,7 @@ const AuthCard = ({ children, title, subtitle }) => (
             <div className="font-display font-semibold text-lg text-gray-900 leading-none">OBSGyne</div>
             <div className="text-[10px] font-bold text-teal-600 uppercase tracking-widest">Simplified</div>
           </div>
-        </Link>
+        </Link> */}
         <h1 className="font-display text-3xl font-bold text-gray-900 mb-2">{title}</h1>
         <p className="text-sm text-gray-500">{subtitle}</p>
       </div>
@@ -111,7 +111,7 @@ export const RegisterPage = () => {
   const strengthColor = ['','bg-red-400','bg-amber-400','bg-green-500'][pwStrength]
 
   return (
-    <AuthCard title="Create account" subtitle="Start your OB/GYN exam preparation today">
+    <AuthCard title="Create account" subtitle="Start your OBS/Gyne exam preparation today">
       <form onSubmit={handle} className="space-y-4">
         <div>
           <label className="block text-xs font-bold text-gray-600 mb-1.5 uppercase tracking-wide">Full Name</label>
